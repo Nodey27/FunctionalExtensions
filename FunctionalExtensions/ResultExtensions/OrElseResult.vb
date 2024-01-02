@@ -4,7 +4,7 @@ Namespace Functional
     Public Module OrElseResult
         <Extension()>
         Public Function [OrElse](Of T, E)(res As Result(Of T, E), other As Result(Of T, E), op As Func(Of Result(Of T, E), Result(Of T, E))) As Result(Of T, E)
-            If res.IsOk Then
+            If res.IsOk() Then
                 Return op(res)
             End If
 

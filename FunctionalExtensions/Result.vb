@@ -10,17 +10,13 @@
             _isSuccess = isSuccess
         End Sub
 
-        Public ReadOnly Property IsErr As Boolean
-            Get
-                Return _isSuccess
-            End Get
-        End Property
+        Public Function IsErr() As Boolean
+            Return Not _isSuccess
+        End Function
 
-        Public ReadOnly Property IsOk As Boolean
-            Get
-                Return Not _isSuccess
-            End Get
-        End Property
+        Public Function IsOk() As Boolean
+            Return _isSuccess
+        End Function
 
         Public Function Unwrap() As T
             If _isSuccess Then
@@ -30,7 +26,7 @@
         End Function
 
         Public Function Err() As E
-            If IsOk Then
+            If Not IsOk() Then
                 Return _errorValue
             End If
             Throw New Panic("Err panicked at err. Consider using 'result.match' to handle both succes and error case")

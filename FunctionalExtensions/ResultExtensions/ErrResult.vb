@@ -4,7 +4,7 @@ Namespace Functional
     Public Module ErrResult
         <Extension()>
         Public Function Err(Of T, E)(res As Result(Of T, E)) As Maybe(Of E)
-            If res.IsOk Then
+            If res.IsOk() Then
                 Return Maybe(Of E).None()
             End If
 

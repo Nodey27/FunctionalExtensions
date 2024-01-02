@@ -4,7 +4,7 @@ Namespace Functional
     Public Module AssertResult
         <Extension()>
         Public Function Assert(Of T, E)(res As Result(Of T, E), predicate As Func(Of T, Boolean), errorHandler As Func(Of T, E)) As Result(Of T, E)
-            If res.IsOk Then
+            If res.IsOk() Then
                 Return res
             End If
 

@@ -4,7 +4,7 @@ Namespace Functional
     Public Module IsOkayAnd
         <Extension()>
         Public Function IsOkayAnd(Of T, K, E)(res As Result(Of T, E), predicate As Func(Of T, Boolean)) As Boolean
-            If res.IsErr Then
+            If res.IsErr() Then
                 Return False
             End If
 
