@@ -3,8 +3,8 @@
 Namespace Functional
     Public Module UnwrapOrMaybe
         <Extension()>
-        Public Function UnwrapOr(Of T)(opt As Maybe(Of T), fallback As T)
-            If opt.IsNone Then
+        Public Function UnwrapOr(Of T)(opt As Maybe(Of T), fallback As T) As T
+            If opt.IsNone() Then
                 Return fallback
             End If
 
