@@ -2,7 +2,7 @@
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
 <TestClass>
-Public Class ExpectTest
+Public Class ExpectResultTest
     <TestMethod>
     Public Sub ExpectReturnsValOnOkResult()
         Dim expected As Integer = 32
