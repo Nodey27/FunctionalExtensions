@@ -4,32 +4,26 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 <TestClass>
 Public Class IsErrAndResultTest
     <TestMethod>
-    Public Sub IsErrReturnsErrOnTrue()
-        Dim errMessage As String = "Scary"
-        Dim sut = Result(Of Integer, String).Err(errMessage)
-
-        Assert.IsTrue(sut.IsErrAnd(Function() True))
+    Public Sub IsErrAndReturnTrue()
+        Assert.IsTrue(
+            Result(Of Integer, String).Err("").
+                IsErrAnd(Function() True)
+        )
     End Sub
 
     <TestMethod>
-    Public Sub IsErrReturnsErrOnFalse()
-        Dim errMessage As String = "Scary"
-        Dim sut = Result(Of Integer, String).Err(errMessage)
-
-        Assert.IsFalse(sut.IsErrAnd(Function() False))
+    Public Sub IsErrAndReturnFalseOnPredicate()
+        Assert.IsFalse(
+            Result(Of Integer, String).Err("").
+                IsErrAnd(Function() False)
+        )
     End Sub
 
     <TestMethod>
-    Public Sub IsErrReturnsPredicateErr()
-        Dim sut = Result(Of Integer, String).Ok(1)
-
-        Assert.IsFalse(sut.IsErrAnd(Function() True))
-    End Sub
-
-    <TestMethod>
-    Public Sub IsErrReturnsPredicateOk()
-        Dim sut = Result(Of Integer, String).Ok(1)
-
-        Assert.IsFalse(sut.IsErrAnd(Function() False))
+    Public Sub IsErrAndReturnFalseOnOk()
+        Assert.IsFalse(
+            Result(Of Integer, String).Ok(1).
+                IsErrAnd(Function() True)
+        )
     End Sub
 End Class
