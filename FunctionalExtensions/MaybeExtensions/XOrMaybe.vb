@@ -4,8 +4,8 @@ Namespace Functional
     Public Module XOrMaybe
         <Extension()>
         Public Function [XOr](Of T)(opt_a As Maybe(Of T), opt_b As Maybe(Of T)) As Maybe(Of T)
-            If opt_a.IsNone() And opt_b.IsNone Or
-                opt_a.IsSome And opt_b.IsSome Then
+            If opt_a.IsNone() And opt_b.IsNone() Or
+                opt_a.IsSome() And opt_b.IsSome() Then
                 Return Maybe(Of T).None()
             End If
 
