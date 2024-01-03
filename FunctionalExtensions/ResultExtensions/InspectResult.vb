@@ -4,10 +4,10 @@ Namespace Functional
     Public Module InspectResult
         <Extension()>
         Public Function Inspect(Of T, E)(res As Result(Of T, E), printer As Action(Of String)) As Result(Of T, E)
-            If res.IsOk() Then
-                printer.Invoke($"Result holds error {res.Err()}")
+            If res.IsErr() Then
+                printer.Invoke($"Result holds error of {res.Err()}")
             Else
-                printer.Invoke($"Result hold value {res.Unwrap()}")
+                printer.Invoke($"Result holds value of {res.Unwrap()}")
             End If
 
             Return res
