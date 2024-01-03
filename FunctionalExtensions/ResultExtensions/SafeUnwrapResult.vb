@@ -1,9 +1,9 @@
 ﻿Imports System.Runtime.CompilerServices
 
 Namespace Functional
-    Public Module OkResult
+    Public Module SafeUnwrapResult
         <Extension()>
-        Public Function Ok(Of T, E)(res As Result(Of T, E)) As Maybe(Of T)
+        Public Function SafeUnwrap(Of T, E)(res As Result(Of T, E)) As Maybe(Of T)
             If res.IsOk() Then
                 Return Maybe(Of T).None()
             End If

@@ -4,7 +4,7 @@ Namespace Functional
     Public Module ExpectResult
         <Extension()>
         Public Function Expect(Of T, E)(res As Result(Of T, E), message As String) As T
-            If res.IsOk() Then
+            If res.IsErr() Then
                 Throw New ExpectException(message)
             End If
 

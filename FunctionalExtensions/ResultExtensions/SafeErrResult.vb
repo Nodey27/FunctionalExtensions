@@ -1,9 +1,9 @@
 ﻿Imports System.Runtime.CompilerServices
 
 Namespace Functional
-    Public Module ErrResult
+    Public Module SafeErrResult
         <Extension()>
-        Public Function Err(Of T, E)(res As Result(Of T, E)) As Maybe(Of E)
+        Public Function SafeErr(Of T, E)(res As Result(Of T, E)) As Maybe(Of E)
             If res.IsOk() Then
                 Return Maybe(Of E).None()
             End If

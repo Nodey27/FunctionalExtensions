@@ -5,7 +5,7 @@ Namespace Functional
         <Extension()>
         Public Function Inspect(Of T, E)(res As Result(Of T, E), printer As Action(Of String)) As Result(Of T, E)
             If res.IsOk() Then
-                printer.Invoke($"Result holds error {Err(res)}")
+                printer.Invoke($"Result holds error {res.Err()}")
             Else
                 printer.Invoke($"Result hold value {res.Unwrap()}")
             End If

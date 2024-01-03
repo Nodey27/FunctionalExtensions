@@ -2,7 +2,7 @@
 
 Namespace Functional
     <Serializable>
-    Friend Class ExpectException
+    Public Class ExpectException
         Inherits Exception
 
         Public Sub New()
