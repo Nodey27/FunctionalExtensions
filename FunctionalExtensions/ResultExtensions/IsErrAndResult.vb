@@ -3,7 +3,7 @@
 Namespace Functional
     Public Module IsErrAndResult
         <Extension()>
-        Public Function IsErrAnd(Of T, K, E)(res As Result(Of T, E), predicate As Func(Of E, Boolean)) As Boolean
+        Public Function IsErrAnd(Of T, E)(res As Result(Of T, E), predicate As Func(Of E, Boolean)) As Boolean
             If res.IsOk() Then
                 Return False
             End If
