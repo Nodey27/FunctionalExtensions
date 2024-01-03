@@ -33,11 +33,10 @@ Public Class MapMaybeTest
     Public Sub MapReturnsMappedSomeOnSomeInChain()
         Dim value As Integer = 1
         Assert.AreEqual(
-            (value * value).ToString(),
+            Maybe(Of String).Some((value * value).ToString()),
             Maybe(Of String).Some(value).
                 Map(Function(x) x * x).
-                Map(Function(x) x.ToString()).
-                Unwrap()
+                Map(Function(x) x.ToString())
         )
     End Sub
 End Class
