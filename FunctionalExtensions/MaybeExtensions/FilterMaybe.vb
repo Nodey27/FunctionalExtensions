@@ -3,7 +3,7 @@
 Namespace Functional
     Public Module FilterMaybe
         <Extension()>
-        Public Function AndThen(Of T)(opt As Maybe(Of T), predicate As Func(Of T, Boolean)) As Maybe(Of T)
+        Public Function Filter(Of T)(opt As Maybe(Of T), predicate As Func(Of T, Boolean)) As Maybe(Of T)
             If opt.IsNone() Then
                 Return Maybe(Of T).None()
             End If
