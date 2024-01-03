@@ -4,7 +4,7 @@ Namespace Functional
     Public Module UnwrapOrElse
         <Extension()>
         Public Function UnwrapOrElse(Of T)(opt As Maybe(Of T), fallback As Func(Of T)) As T
-            If opt.IsNone Then
+            If opt.IsNone() Then
                 Return fallback()
             End If
 
