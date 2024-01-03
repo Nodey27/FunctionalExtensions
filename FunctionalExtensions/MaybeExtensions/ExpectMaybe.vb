@@ -5,7 +5,7 @@ Namespace Functional
         <Extension()>
         Public Function Expect(Of T)(opt As Maybe(Of T), message As String) As T
             If opt.IsNone() Then
-                Throw New ExpectException("Expect called on maybe with no value")
+                Throw New ExpectException(message)
             End If
 
             Return opt.Unwrap()
