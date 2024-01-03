@@ -45,4 +45,59 @@ Public Class MatchResultTest
                 )
         )
     End Sub
+
+    <TestMethod>
+    Public Sub MatchExecutesActionOnOk()
+        Dim expected As Integer = 1002
+        Dim _global As Integer = 0
+
+        Result(Of Integer, String).
+                Ok(expected).
+                Match(
+                    Sub(x) _global = x,
+                    Sub(err) _global = -1
+                )
+
+        Assert.AreEqual(
+            expected,
+            _global
+        )
+    End Sub
+
+    <TestMethod>
+    Public Sub MatchExecutesActionOnErr()
+        Dim expected As Integer = -1
+        Dim _global As Integer = 0
+
+        Result(Of Integer, String).
+                Err("").
+                Match(
+                    Sub(x) _global = x,
+                    Sub(err) _global = -1
+                )
+
+        Assert.AreEqual(
+            expected,
+            _global
+        )
+    End Sub
+
+    <TestMethod>
+    Public Sub MatchExecutesActionOnErrChain()
+        Dim expected As Integer = -1
+        Dim _global As Integer = 0
+
+        Result(Of Integer, String).
+                Ok(expected).
+                Assert(Function(x) x < 0, Function(err) err).
+                Match(
+                    Sub(x) _global = x,
+                    Sub(err) _global = -1
+                )
+
+        Assert.AreEqual(
+            expected,
+            _global
+        )
+    End Sub
 End Class
