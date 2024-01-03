@@ -4,7 +4,7 @@ Namespace Functional
     Public Module UnzipMaybe
         <Extension()>
         Public Function Unzip(Of T, K)(opt As Maybe(Of Tuple(Of T, K))) As Tuple(Of Maybe(Of T), Maybe(Of K))
-            If opt.IsNone Then
+            If opt.IsNone() Then
                 Return New Tuple(Of Maybe(Of T), Maybe(Of K))(
                 Maybe(Of T).None(), Maybe(Of K).None
             )
