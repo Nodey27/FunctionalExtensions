@@ -29,7 +29,7 @@ Introduction to all the methods and function the library has to offer.
 *[Try](Of T, E)(func As Func(Of T), onError As Func(Of Exception, E)) As Result(Of T, E)*
 
 ```vbnet
-    Private Const expectedMessage As String = "Can not sqrt negative integers"
+    Private Const expectedMessage = "Can not sqrt negative integers"
 
     Public Function CustomSqrt(x As Integer) As Double
         If x < 0 Then
@@ -40,30 +40,25 @@ Introduction to all the methods and function the library has to offer.
     End Function
 
     Public Sub ExampleNoException()
-        Dim value As Integer = 15
-        Dim expected As Result(Of Double, String) =
-            Result(Of Double, String).Ok(value:=CustomSqrt(value))
-        Dim res As Result(Of Double, String) =
-            Result(Of Double, String).
-                Try(
-                    func:=Function() CustomSqrt(value),
-                    onError:=Function(exception) exception.Message
-                )
+        Dim value = 15
+        Dim expected = Result(Of Double, String).Ok(CustomSqrt(value))
+        Dim res = Result(Of Double, String).
+            Try(
+                Function() CustomSqrt(value),
+                Function(exception) exception.Message
+            )
 
         Assert.AreEqual(expected, res)
     End Sub
 
     Public Sub ExampleCatchException()
-        Dim value As Integer = -1
-        Dim expected As Result(Of Double, String) =
-            Result(Of Double, String).Err(errorValue:=expectedMessage)
-
-        Dim res As Result(Of Double, String) =
-            Result(Of Double, String).
-                Try(
-                    func:=Function() CustomSqrt(value),
-                    onError:=Function(exception) exception.Message
-                )
+        Dim value = -1
+        Dim expected  = Result(Of Double, String).Err(errorValue:=expectedMessage)
+        Dim res = Result(Of Double, String).
+            Try(
+                Function() CustomSqrt(value),
+                Function(exception) exception.Message
+            )
 
         Assert.AreEqual(expected, res)
     End Sub
