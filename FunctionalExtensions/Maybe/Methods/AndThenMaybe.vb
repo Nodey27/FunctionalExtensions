@@ -11,5 +11,4 @@ Namespace Functional
             Return map(opt.Unwrap())
         End Function
     End Module
-
 End Namespace
