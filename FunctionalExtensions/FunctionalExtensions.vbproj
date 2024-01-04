@@ -1,8 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <RootNamespace>FunctionalExtensions</RootNamespace>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <Version>0.0.1</Version>
+    <PackageId>VisualBasicFunctionalExtensions</PackageId>
+    <Authors>Justin Kasteleijn, Nadia Alrayes</Authors>
+    <Company />
+    <Description>A small functional library for Visual Basic .Net 2.1. For now not concerned with performance so the overhead can be excessive in performance critical applications. All functions have been tested.</Description>
+    <Copyright>Copyright (c) &lt;JustinKasteleijn&gt; &lt;2024&gt;</Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JustinKasteleijn/FunctionalExtensions</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Functional, Visual Basic, VB, Result, Maybe, Rust</PackageTags>
+    <PackageReleaseNotes>First iteration of the package, when encountering a bug please visit the git repository to notify me.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="docs\readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 </Project>
