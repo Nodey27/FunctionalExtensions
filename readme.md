@@ -29,7 +29,7 @@ Introduction to all the methods and function the library has to offer.
 *[Try](Of T, E)(func As Func(Of T), onError As Func(Of Exception, E)) As Result(Of T, E)*
 
 ```vbnet
-	Private Const expectedMessage As String = "Can not sqrt negative integers"
+Private Const expectedMessage As String = "Can not sqrt negative integers"
 
     Public Function CustomSqrt(x As Integer) As Double
         If x < 0 Then
