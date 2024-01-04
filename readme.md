@@ -1,7 +1,7 @@
 # VisualBasicFunctionalExtensions
 
 **Package ID:** VisualBasicFunctionalExtensions  
-**Version:** 0.0.1  
+**Version:** 0.0.3  
 **Owner:** Justi  
 **License:** MIT
 
@@ -14,7 +14,7 @@ VisualBasicFunctionalExtensions is a functional library for Visual Basic .NET 2.
 Install via NuGet Package Manager Console:
 
 ```bash
-dotnet add package VisualBasicFunctionalExtensions --version 0.0.2
+dotnet add package VisualBasicFunctionalExtensions --version 0.0.3
 ```
 
 ## Features
