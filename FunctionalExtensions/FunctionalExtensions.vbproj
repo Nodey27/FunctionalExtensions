@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <RootNamespace>FunctionalExtensions</RootNamespace>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.2</Version>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <Version>0.0.3</Version>
     <PackageId>VisualBasicFunctionalExtensions</PackageId>
     <Authors>Justin Kasteleijn, Nadia Alrayes</Authors>
     <Company />
@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/JustinKasteleijn/FunctionalExtensions</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Functional, Visual Basic, VB, Result, Maybe, Rust</PackageTags>
-    <PackageReleaseNotes>First iteration of the package, when encountering a bug please visit the git repository to notify me.</PackageReleaseNotes>
+    <PackageReleaseNotes>Target now .Net Standard 1.0 to support more frameworks. Had to remove serializable from the exceptions so take this into account. Detailed readme and more functionality will be added in future releases.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
      <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
