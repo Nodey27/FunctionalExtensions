@@ -64,6 +64,9 @@ Introduction to all the methods and function the library has to offer.
     End Sub
 ```
 
+#### And
+*[And](Of T, K, E)(res As Result(Of T, E), other As Result(Of K, E)) As Result(Of K, E)*
+
 ## Authors
 Justin Kasteleijn
 Nadia Alrayes
